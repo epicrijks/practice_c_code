@@ -3,16 +3,11 @@
 #include "unity.h"
 #include "cvector.h"
 
-cvector* testVector = NULL;
+cvector* testVector;
 
-void setUp (void) {} /* Is run before every test, put unit init calls here. */
-
-void tearDown(void) {} /* Is run after every test, put unit clean-up calls here. */
-//   if (testVector != NULL) {
-//     free(testVector);
-//     testVector = NULL;
-//   }
-// } 
+void setUp (void) { /* Is run before every test, put unit init calls here. */
+  testVector = NULL;
+}
 
 // Used to destory testVector is tests only. 
 void destroyTestVector() {
@@ -118,6 +113,12 @@ void test_getPow2Capacity(void) {
   TEST_ASSERT_EQUAL(16, getPow2Capacity(16));
   TEST_ASSERT_EQUAL(32, getPow2Capacity(17));
 }
+
+void tearDown(void) { /* Is run after every test, put unit clean-up calls here. */
+  if (testVector != NULL) {
+    destroyTestVector();
+  }
+} 
 
 int main(void) {
   UNITY_BEGIN();
