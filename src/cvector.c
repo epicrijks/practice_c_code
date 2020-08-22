@@ -21,20 +21,34 @@ cvector* createCVector(unsigned int capacity) {
   return rVector;
 }
 
-
-
 void destroyCVector(cvector* v) {
   if ( v != NULL ) {
     if ( v->_data != NULL) {
       free(v->_data);
+      v->_data = NULL;
     }
     free(v);
+    v = NULL;
   }
 }
 
+unsigned int sizeCVector(cvector* v) {
+  unsigned int size = 0;
+  if (v != NULL) {
+    size = v->_size;
+  }
+  return size;
+}
+
+unsigned int capacityCVector() {
+  return MAX_VECTOR_SIZE;
+}
+
+
+
 // ! Make static before after testing
 unsigned int getPow2Capacity(unsigned int c) {
-  unsigned int cap = 8;
+  unsigned int cap = MIN_VECTOR_SIZE;
   if ( c > cap ) {
     cap = c;
     if ( !(cap && !(cap&(cap-1))) ) {/* If cap is not a power of two... */
