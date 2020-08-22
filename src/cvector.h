@@ -30,7 +30,7 @@ typedef struct {
 /*
  * Function:  createCVector
  * --------------------
- * creates a cvector
+ * creates a cvector (optimized for space based on given capacity)
  *
  * capacity: the initial number of elements to store
  *
@@ -65,6 +65,15 @@ unsigned int sizeCVector(cvector* v);
  * returns: max number of elements any cvector can hold
  */
 unsigned int capacityCVector();
+
+/*
+ * Function:  isEmptyCVector
+ * --------------------
+ * determines if v is empty
+ *
+ * returns: 1 if empty, 0 otherwise
+ */
+short int isEmptyCVector(cvector* v);
 
 // ! Remove after testing and set to static in cvector.c
 unsigned int getPow2Capacity(unsigned int c);

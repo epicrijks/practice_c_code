@@ -91,6 +91,22 @@ void test_capacityCVector_shouldReturnMaxCapacityAsDeclaredInMacros(void) {
   TEST_ASSERT_EQUAL(2048, capacityCVector()); /* MAX_VECTOR_SIZE defined in cvector.h macros */
 } 
 
+void test_isEmptyCVector_shouldReturnOneIfVectorEmptyZeroOtherwise(void) {
+  testVector = NULL;
+  TEST_ASSERT_EQUAL(1, isEmptyCVector(testVector));
+
+  // Set up vector and test for memory allocation
+  testVector = (cvector*)malloc(sizeof(cvector));
+  TEST_ASSERT_NOT_NULL_MESSAGE(testVector, "unable to allocate memory for vector");
+
+  TEST_ASSERT_EQUAL(1, isEmptyCVector(testVector));
+
+  testVector->_size = 1; /* Simulate adding an element */
+  TEST_ASSERT_EQUAL(0, isEmptyCVector(testVector));
+
+  destroyTestVector();
+}
+
 // ! This is a static funtion that will not be included in future tests.
 // ! comment out after testing
 void test_getPow2Capacity(void) {
@@ -112,6 +128,7 @@ int main(void) {
   RUN_TEST(test_getPow2Capacity); // ! comment out after testing
   RUN_TEST(test_sizeCVector_sizeShouldBeSizeVariableInVector);
   RUN_TEST(test_capacityCVector_shouldReturnMaxCapacityAsDeclaredInMacros);
+  RUN_TEST(test_isEmptyCVector_shouldReturnOneIfVectorEmptyZeroOtherwise);
   return UNITY_END();
 }
 

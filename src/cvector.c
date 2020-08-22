@@ -44,7 +44,13 @@ unsigned int capacityCVector() {
   return MAX_VECTOR_SIZE;
 }
 
-
+short int isEmptyCVector(cvector* v) {
+  short int empty = 1;
+  if ( v != NULL && v->_size > 0 ) {
+    empty = 0;
+  }
+  return empty;
+}
 
 // ! Make static before after testing
 unsigned int getPow2Capacity(unsigned int c) {
