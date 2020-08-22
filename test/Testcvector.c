@@ -9,7 +9,7 @@ void setUp (void) { /* Is run before every test, put unit init calls here. */
   testVector = NULL;
 }
 
-// Used to destory testVector is tests only. 
+// Used to destroy testVector in tests only. 
 void destroyTestVector() {
   if ( testVector != NULL ) {
     if ( testVector->_data != NULL) {
