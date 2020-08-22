@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "cvector.h"
 
-cvector* createCVector(int capacity) {
+cvector* createCVector(unsigned int capacity) {
   cvector* rVector = NULL; /* Pointer to return */
   if ( capacity < 1 || capacity >= MAX_VECTOR_SIZE ) {
     rVector = NULL;
@@ -33,8 +33,8 @@ void destroyCVector(cvector* v) {
 }
 
 // ! Make static before after testing
-int getPow2Capacity(int c) {
-  int cap = 8;
+unsigned int getPow2Capacity(unsigned int c) {
+  unsigned int cap = 8;
   if ( c > cap ) {
     cap = c;
     if ( !(cap && !(cap&(cap-1))) ) {/* If cap is not a power of two... */

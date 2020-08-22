@@ -18,11 +18,11 @@
 #ifndef _C_VECCTOR_H_
 #define _C_VECCTOR_H_
 
-#define MAX_VECTOR_SIZE 1024
+#define MAX_VECTOR_SIZE 2048
 
 typedef struct {
-  int _size;
-  int _capacity;
+  unsigned int _size;
+  unsigned int _capacity;
   int* _data;
 } cvector;
 
@@ -36,12 +36,12 @@ typedef struct {
  *  returns: pointer to cvector
  *           NULL if capacity < 1 or unable to allocate memory
  */
-cvector* createCVector(int capacity);
+cvector* createCVector(unsigned int capacity);
 
 
 void destroyCVector(cvector* v);
 
 
 // ! Remove after testing and set to static in cvector.c
-int getPow2Capacity(int c);
+unsigned int getPow2Capacity(unsigned int c);
 #endif
