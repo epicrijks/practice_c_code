@@ -1,0 +1,12 @@
+test/Testcvector.c:125:test_createCVector_sizeShouldBeZero:PASS
+test/Testcvector.c:126:test_createCVector_capacityPowOf2AboveParamWithMin8:PASS
+test/Testcvector.c:127:test_createCVector_returnsNullIfCapacityLessThan1:PASS
+test/Testcvector.c:128:test_createCVector_returnsNullIfCapacityGreaterThanIntMax:PASS
+test/Testcvector.c:129:test_getPow2Capacity:PASS
+test/Testcvector.c:130:test_sizeCVector_sizeShouldBeSizeVariableInVector:PASS
+test/Testcvector.c:131:test_capacityCVector_shouldReturnMaxCapacityAsDeclaredInMacros:PASS
+test/Testcvector.c:132:test_isEmptyCVector_shouldReturnOneIfVectorEmptyZeroOtherwise:PASS
+
+-----------------------
+8 Tests 0 Failures 0 Ignored 
+OK
