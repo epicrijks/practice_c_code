@@ -75,6 +75,16 @@ unsigned int capacityCVector();
  */
 short int isEmptyCVector(cvector* v);
 
+/*
+ * Function:  atCVector
+ * --------------------
+ * returns values at given pos.
+ *
+ * returns: int value at given position. 
+ *          prints error msg and exits program if out of bounds
+ */
+int atCVector(cvector* v, int pos);
+
 // ! Remove after testing and set to static in cvector.c
 unsigned int getPow2Capacity(unsigned int c);
 #endif

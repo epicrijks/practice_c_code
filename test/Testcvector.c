@@ -102,6 +102,10 @@ void test_isEmptyCVector_shouldReturnOneIfVectorEmptyZeroOtherwise(void) {
   destroyTestVector();
 }
 
+void test_atCVector_shoulsReturnValueAtGivenPosition(void) {
+  
+}
+
 // ! This is a static funtion that will not be included in future tests.
 // ! comment out after testing
 void test_getPow2Capacity(void) {

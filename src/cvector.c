@@ -52,6 +52,8 @@ short int isEmptyCVector(cvector* v) {
   return empty;
 }
 
+int atCVector(cvector* v, int pos) {}
+
 // ! Make static before after testing
 unsigned int getPow2Capacity(unsigned int c) {
   unsigned int cap = MIN_VECTOR_SIZE;
